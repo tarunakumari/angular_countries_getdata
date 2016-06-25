@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+    table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table tr:nth-child(odd)	{
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+    Button
+    {
+        margin:5px;
+    }
+</style>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl" class="container-fluid" >
+    <div class="row">
+        <div class="col-md-12" style="background-color: #8DC4D6;font-size: 16px; margin-bottom: 10px; font-weight: bold;" >
+            <h4 align="center"> <button class="btn btn-primary btn-sm" ng-click = "myFunc()" style="float: left;vertical-align: middle;margin-bottom: 8px">Get Data </button>
+                                <button class="btn btn-primary btn-sm" ng-click = "deleteLast()" style="float: left;vertical-align: middle;margin-bottom: 8px"> Delete last </button>Countries Population</h4>
+
+        </div>
+    </div>
+    <div class="row">
+       <table>
+           <tr>
+              <th>Country</th><th>Population</th><th>Capital</th>
+           </tr>
+           <tr ng-repeat="x in names">
+               <td>{{ x.name }}</td>
+               <td>{{ x.population }}</td>
+               <td>{{ x.capital }}</td>
+           </tr>
+      </table>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src = "coutriesapp.js"></script>
+</body>
+</html>
